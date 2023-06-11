@@ -120,7 +120,7 @@ class PrinterStepperEnable:
         self.motor_off()
     cmd_SET_STEPPER_ENABLE_help = "Enable/disable individual stepper by name"
     def cmd_SET_STEPPER_ENABLE(self, gcmd):
-        steppers_str = gcmd.get('STEPPER', None)
+        steppers_str = gcmd.get('STEPPERS', None)
         stepper_enable = gcmd.get_int('ENABLE', 1)
         steppers = []
         if steppers_str is None:

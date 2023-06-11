@@ -125,6 +125,10 @@ class PrinterStepperEnable:
         steppers = []
         if steppers_str is None:
             steppers = [None]
+            old_stepper_str = gcmd.get('STEPPER', None)
+            if old_stepper_str is not None:
+                steppers = old_stepper_str.split(',')
+                gcmd.respond_info('"STEPPER" parameter is deprecated')
         else:
             steppers = steppers_str.split(',')
         for stepper_name in steppers:

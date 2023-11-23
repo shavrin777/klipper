@@ -9,6 +9,7 @@ Klipper supports the following standard G-Code commands:
 - Move (G0 or G1): `G1 [X<pos>] [Y<pos>] [Z<pos>] [E<pos>] [F<speed>]`
 - Dwell: `G4 P<milliseconds>`
 - Move to origin: `G28 [X] [Y] [Z]`
+- Turn on motors: `M17`
 - Turn off motors: `M18` or `M84`
 - Wait for current moves to finish: `M400`
 - Use absolute/relative distances for extrusion: `M82`, `M83`
@@ -1218,7 +1219,7 @@ settings. Requires `control_pin` to be provided in the config section.
 The stepper_enable module is automatically loaded.
 
 #### SET_STEPPER_ENABLE
-`SET_STEPPER_ENABLE STEPPERS=<config_name> [ENABLE=[0|1]]`: Enable or
+`SET_STEPPER_ENABLE STEPPER=<config_name> [ENABLE=[0|1]]`: Enable or
 disable only the given steppers. `<config_name>` can be one or
 more configured steppers, delimited with comma, for example
 `STEPPER=stepper_x,stepper_y ENABLE=1`. This is a diagnostic and debugging
